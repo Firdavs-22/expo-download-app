@@ -307,7 +307,9 @@ export class DownloadManager extends EventEmitter {
             const downloadResumable = FileSystem.createDownloadResumable(
                 task.url,
                 task.filePath,
-                {},
+                {
+                    sessionType: FileSystem.FileSystemSessionType.BACKGROUND
+                },
                 progressCallback,
                 task.resumeData
             );
